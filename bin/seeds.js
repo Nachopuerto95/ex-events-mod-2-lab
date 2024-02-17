@@ -7,3 +7,4 @@ const events = require('../data/events');
 Event.create(events) 
     .then((events) => console.log(`${events.length} events created`))
     .catch((error) => console.error('error al crear', error));
+

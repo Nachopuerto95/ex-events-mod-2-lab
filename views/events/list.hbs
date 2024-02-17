@@ -1,6 +1,12 @@
-
-{{#each events as |event|}}
-    <h1>{{event.title}}</h1>
-    <img src="{{event.image}}" alt="{{event.name}}">
-    <p>{{event.start}}</p>
-{{/each}}
+<div class="d-flex m-3" >
+    {{#each events as |event|}}
+        <div class="card m-2" style="width: 18rem;">
+            <img class="card-img-top" src="{{event.image}}" alt="{{event.name}}">
+            <div class="card-body">
+                <h5 class="card-title">{{event.title}}</h5>
+                <p class="card-text">{{event.start}}</p>
+                <a href="/events/{{event.id}}" class="btn btn-primary color-dark">Details</a>
+            </div>
+        </div>
+    {{/each}}
+</div>

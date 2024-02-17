@@ -25,7 +25,16 @@ const eventSchema = new Schema(
         end: {
             type: Date,
             required: [true, 'End date is required'],
-            validate: 
+            validate: {
+                validator: function(end) {
+                    try{
+                        this.start <= end;
+                        return true;
+                    } catch(error) {
+                        return false;
+                    }
+                }
+            }
         },
         image: {
             type: String,
@@ -46,7 +55,7 @@ const eventSchema = new Schema(
             type: [String]
         } 
     },
-    { timestamps: true}
+    {timestamps: true}
 );
 
 const Event = mongoose.model('Event', eventSchema);
