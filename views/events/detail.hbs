@@ -1,1 +1,18 @@
-<h1>hola</h1>
+
+<div class="container d-flex flex-column align-flex-end">
+    <img src="{{event.image}}" alt="{{event.title}}"> 
+<h2 class="mt-4">{{event.title}}</h2>
+
+<p class="mt-4 m-auto"> <strong>Start date: </strong>{{event.start}}</p>
+<p class="m-auto"><strong>End date: </strong>{{event.end}}</p>
+
+<p class="m-auto"><strong>Capacity: </strong>{{event.capacity}}</p>
+<p class="w-50"><strong>Description: </strong>{{event.description}}</p>
+
+<p>{{event.message}}</p>
+
+
+{{#each event.tags as |tag|}}
+<span class="tags">{{tag}}</span>
+{{/each}}
+</div>

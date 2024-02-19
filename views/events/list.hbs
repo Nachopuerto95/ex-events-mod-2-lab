@@ -1,10 +1,13 @@
+<a href="/create-event">crear evento</a>
+ 
 <div class="d-flex m-3" >
     {{#each events as |event|}}
+    <a href="/events/{{event.id}}/delete">delete</a>
         <div class="card m-2" style="width: 18rem;">
-            <img class="card-img-top" src="{{event.image}}" alt="{{event.name}}">
+            <img class="card-img-top" src="{{event.image}}" alt="{{event.title}}">
             <div class="card-body">
                 <h5 class="card-title">{{event.title}}</h5>
-                <p class="card-text">{{event.start}}</p>
+                <p class="card-text">{{dateFormat event.start 'YYYY-MM-DD'}}</p>
                 <a href="/events/{{event.id}}" class="btn btn-primary color-dark">Details</a>
             </div>
         </div>

@@ -1,0 +1,48 @@
+<form action="/create-event" method="POST">
+    <div class="form-floating mb-3">
+        <input name="title" type="text" class="form-control {{#if errors.title}} is-invalid {{/if}}" placeholder="Event name">
+        {{#if errors.title}}<div class="invalid-feedback">{{errors.title}}</div>{{/if}}
+        <label for="floatingInput">Event name</label>
+    </div>
+
+<div class="form-floating mb-3">
+        <input name="image" type="text" class="form-control {{#if errors.image}} is-invalid {{/if}}">
+        {{#if errors.image}}<div class="invalid-feedback">{{errors.image}}</div>{{/if}}
+        <label for="floatingInput">Image url</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input name="capacity" type="number" class="form-control {{#if errors.capacity}} is-invalid {{/if}}">
+        {{#if errors.capacity}}<div class="invalid-feedback">{{errors.capacity}}</div>{{/if}}
+        <label for="floatingInput">Capacity</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input min="1818-01-01" max="2118-12-31" name="start" type="date" class="form-control {{#if errors.start}} is-invalid {{/if}}">
+        {{#if errors.start}}<div class="invalid-feedback">{{errors.start}}</div>{{/if}}
+        <label for="floatingInput">Start Date</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input min="1818-01-01" max="2118-12-31" name="end" type="date" class="form-control {{#if errors.end}} is-invalid {{/if}}">
+        {{#if errors.end}}<div class="invalid-feedback">{{errors.end}}</div>{{/if}}
+        <label for="floatingInput">End Date</label>
+    </div>
+
+     <div class="form-floating mb-3">
+        <input name="tags" type="text" class="form-control {{#if errors.tags}} is-invalid {{/if}}">
+        {{#if errors.tags}}<div class="invalid-feedback">{{errors.tags}}</div>{{/if}}
+        <label for="floatingInput">Tags</label>
+    </div>
+
+     <div class="form-floating mb-3">
+        <input name="description" type="text" class="form-control {{#if errors.description}} is-invalid {{/if}}">
+        {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
+        <label for="floatingInput">Description</label>
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Create</button>
+</form>
+
+
+
